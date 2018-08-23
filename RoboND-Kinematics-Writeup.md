@@ -8,6 +8,10 @@
 [image1]: ./misc_images/misc1.png
 [image2]: ./misc_images/misc3.png
 [image3]: ./misc_images/misc2.png
+[image4]: ./misc_images/URDF_sketch.jpg
+[image5]: ./misc_images/DH_param.jpg
+[image6]: ./misc_images/WC-Thetas123.jpg
+[image7]: ./misc_images/WC-Thetas456.jpg
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.

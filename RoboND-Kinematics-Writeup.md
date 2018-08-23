@@ -28,11 +28,12 @@ You're reading it!
 
 After inspecting the demo, I reviewed the KR210 urdf file to identify the DH parameters of the Kuka KR210 robot. This image shows the relative joints' relative positions and orientations.
 
-![alt text][image1]
+![alt text][image4]
 
 I created an outline of the table to house the DH parameters to transform the system from one joint to the next, and began to sketch out from one point to the next. This DH parameter table was populated after fitting lengths and angles to each piece.
 
-![alt text][image2]
+![alt text][image5]
+
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
@@ -48,13 +49,15 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 
 After visualizing and labeling the joint links and angles to create the modified DH parameter table, I created a formula to create a homogeneous transform matrix out of any given set of DH parameters. Using this formula, I applied each set of DH parameters as inputs and subs from the DH Table to generate each individual transformation matrix from one joint to the next.
 
-# homogeneous transform image
+homogeneous transform image
 
 Using the roll, pitch, and yaw values of the end-effector, I built a rotational matrix in each plane to determine a combined rotational transform to the end-effector pose. After adjusting for the rotational error, the end-effector position and orientation values are substituted into the transform to identify the transform to the wrist center.
 
+![alt text][image6]
+
 ![alt text][image3]
 
-# WC image
+ WC image
 
 
 
@@ -62,9 +65,12 @@ Using the roll, pitch, and yaw values of the end-effector, I built a rotational 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
 And here's where you can draw out and show your math for the derivation of your theta angles.
-# WC sketch
-# Theta angles sketches
+WC sketch
+Theta angles sketches
+![alt text][image6]
+![alt text][image7]
 
+![alt text][image2]
 ![alt text][image4]
 
 ### Project Implementation

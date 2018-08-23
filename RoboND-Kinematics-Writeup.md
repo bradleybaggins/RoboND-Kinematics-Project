@@ -12,6 +12,9 @@
 [image5]: ./misc_images/DH_param.jpg
 [image6]: ./misc_images/WC-Thetas123.jpg
 [image7]: ./misc_images/WC-Thetas456.jpg
+[image8]: ./misc_images/Transform.png
+[image9]: ./misc_images/wrist_center.png
+[image10]: ./misc_images/IK_orientation.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.

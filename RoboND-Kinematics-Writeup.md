@@ -56,6 +56,7 @@ Using the roll, pitch, and yaw values of the end-effector, I built a rotational 
 And here's the derivation of the theta angles:
 
 ![alt text][image6]
+
 ![alt text][image10]
 
 ![alt text][image7]
@@ -68,5 +69,6 @@ And here's the derivation of the theta angles:
 
 Here I'll talk about the code, what techniques I used, what worked and why, where the implementation might fail and how I might improve it if I were going to pursue this project further.
 
+The code followed the order of the lessons and the guide fairly directly. First the symbols are initialized, the transformational matrices are built, rotation matrices are sliced from them to compute EE and Wrist center positions, and finally the theta angles are calcuated using inverse kinematics and some trigonometry.
 
-And just for fun, another example image:
+I think the implementation has some lines it likely doesn't need, and a future implementation could probably make some decisions about the joint trajectories that are returned. I also wonder about how a different kind of implementation my request and evaluate poses.

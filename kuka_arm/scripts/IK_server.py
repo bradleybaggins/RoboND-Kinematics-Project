@@ -76,24 +76,28 @@ def handle_calculate_IK(req):
         #simplify() above
         #T0_6.evalf(subs={q1: 0, q2: 0, d3: 0, q4: 0})
 
-
+	# Initialize service response
+        joint_trajectory_list = []
+        for x in xrange(0, len(req.poses)):
+            # IK code starts here
+            joint_trajectory_point = JointTrajectoryPoint()
 	    # Extract end-effector position and orientation from request
 	    # px,py,pz = end-effector position
 	    # roll, pitch, yaw = end-effector orientation
-        px = req.poses[x].position.x
-        py = req.poses[x].position.y
-        pz = req.poses[x].position.z
+        	px = req.poses[x].position.x
+        	py = req.poses[x].position.y
+        	pz = req.poses[x].position.z
 
-        (roll, pitch, yaw) = tf.transformations.euler_from_quaternion(
-            [req.poses[x].orientation.x, req.poses[x].orientation.y,
-                req.poses[x].orientation.z, req.poses[x].orientation.w])
+        	(roll, pitch, yaw) = tf.transformations.euler_from_quaternion(
+            		[req.poses[x].orientation.x, req.poses[x].orientation.y,
+                		req.poses[x].orientation.z, req.poses[x].orientation.w])
 
         ### Your IK code here
         r, p, y = symbols('r p y')
         # Find EE rotation Matrix
         # Define RPY rotation Matrix
-	    # Compensate for rotation discrepancy between DH parameters and Gazebo
-	    ROT_x = Matrix([[ 1,             0,       0], # ROLL
+	# Compensate for rotation discrepancy between DH parameters and Gazebo
+	ROT_x = Matrix([[ 1,             0,       0], # ROLL
                         [ 0,        cos(r), -sin(r)],
                         [ 0,        sin(r),  cos(r)]])
 
@@ -117,7 +121,7 @@ def handle_calculate_IK(req):
                     [pz])
         WC = EE - (0.303)*ROT_EE[:,2]
 
-	    # Calculate joint angles using Geometric IK method
+	# Calculate joint angles using Geometric IK method
         # Inverse Kinematics with Kuka KR210 #
         theta1 = atan2(WC[1],WC[0])
 
@@ -142,14 +146,6 @@ def handle_calculate_IK(req):
         theta6 = atan2(-R3_6[1,1], R3_6[1,0])
             ###
         FK = T0_EE.evalf(subs={q1: theta1, q2: theta2, q3: theta3, q4: theta4, q5: theta5, g6: theta6})
-
-## where does this go?
-        # Initialize service response
-        joint_trajectory_list = []
-        for x in xrange(0, len(req.poses)):
-            # IK code starts here
-            joint_trajectory_point = JointTrajectoryPoint()
-##
 
             # Populate response for the IK request
             # In the next line replace theta1,theta2...,theta6 by your joint angle variables

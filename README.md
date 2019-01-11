@@ -29,11 +29,11 @@ You're reading it!
 ### Kinematic Analysis
 #### 1. Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.
 
-After inspecting the demo, I reviewed the KR210 urdf file to identify the DH parameters of the Kuka KR210 robot. This image shows the relative joints' relative positions and orientations.
+After inspecting the demo, I reviewed the KR210 urdf file to identify the Denavit–Hartenberg (DH) parameters of the Kuka KR210 robot. This image shows the relative joints' relative positions and orientations.
 
 ![alt text][image4]
 
-I created an outline of the table to house the Denavit–Hartenberg (DH) parameters to transform the system from one joint to the next, and began to sketch out from one point to the next. This DH parameter table was populated after fitting lengths and angles to each piece.
+I created an outline of the table to house the DH parameters to transform the system from one joint to the next, and began to sketch out from one point to the next. This DH parameter table was populated after fitting lengths and angles to each piece.
 
 ![alt text][image5]
 

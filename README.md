@@ -33,7 +33,7 @@ After inspecting the demo, I reviewed the KR210 urdf file to identify the DH par
 
 ![alt text][image4]
 
-I created an outline of the table to house the DH parameters to transform the system from one joint to the next, and began to sketch out from one point to the next. This DH parameter table was populated after fitting lengths and angles to each piece.
+I created an outline of the table to house the Denavit–Hartenberg (DH) parameters to transform the system from one joint to the next, and began to sketch out from one point to the next. This DH parameter table was populated after fitting lengths and angles to each piece.
 
 ![alt text][image5]
 
